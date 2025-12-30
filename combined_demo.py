@@ -120,7 +120,7 @@ def train_model(model, X_train, y_train, X_test, y_test, epochs=50):
     
     return train_losses, test_losses, accuracies
 
-def visualize_results(df, model, X_test, y_test, train_losses, test_losses, accuracies):
+def visualize_results(df, model, X_train, X_test, y_test, train_losses, test_losses, accuracies):
     """Create comprehensive visualizations using Matplotlib"""
     fig = plt.figure(figsize=(15, 10))
     
@@ -201,7 +201,7 @@ def visualize_results(df, model, X_test, y_test, train_losses, test_losses, accu
     Dataset Statistics
     ==================
     Total Samples: {len(df)}
-    Train Samples: {len(X_test) * 4}
+    Train Samples: {len(X_train)}
     Test Samples: {len(X_test)}
     Features: {df.shape[1] - 1}
     """
@@ -238,7 +238,7 @@ def main():
     
     # Step 4: Visualize with Matplotlib
     print("\nCreating visualizations with Matplotlib...")
-    visualize_results(df, model, X_test, y_test, 
+    visualize_results(df, model, X_train, X_test, y_test, 
                      train_losses, test_losses, accuracies)
     
     print("\n" + "=" * 60)
