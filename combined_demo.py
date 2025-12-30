@@ -181,12 +181,12 @@ def visualize_results(df, model, X_test, y_test, train_losses, test_losses, accu
     
     # Plot 5: Feature correlation
     ax5 = plt.subplot(2, 3, 5)
-    ax5.scatter(df['feature_1'], df['feature_2'], c=df['label'], 
-                cmap='RdYlBu', alpha=0.6, s=30, edgecolor='k')
+    scatter = ax5.scatter(df['feature_1'], df['feature_2'], c=df['label'], 
+                         cmap='RdYlBu', alpha=0.6, s=30, edgecolor='k')
     ax5.set_title('Feature Correlation')
     ax5.set_xlabel('Feature 1')
     ax5.set_ylabel('Feature 2')
-    ax5.colorbar = plt.colorbar(ax=ax5, label='Label')
+    plt.colorbar(scatter, ax=ax5, label='Label')
     
     # Plot 6: Summary statistics
     ax6 = plt.subplot(2, 3, 6)

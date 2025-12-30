@@ -67,3 +67,9 @@ env/
 *.pth
 *.h5
 *.model
+
+# Generated outputs #
+####################
+data_analysis_results.png
+pytorch_training_results.png
+combined_analysis_results.png
